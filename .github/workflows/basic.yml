@@ -1,0 +1,27 @@
+name: Day 1 - Basic Workflow & Runner Check
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  explore-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Checkout Kode Repositori
+        uses: actions/checkout@v4
+
+      - name: 2. Cek Isi Direktori & Informasi Sistem
+        run: |
+          echo "=== Direktori Kerja ==="
+          pwd
+          ls -la
+          echo "=== Info CPU & RAM Runner ==="
+          nproc
+          free -h
+
+      - name: 3. Eksekusi Skrip dari Repositori
+        run: |
+          chmod +x info.sh
+          ./info.sh
