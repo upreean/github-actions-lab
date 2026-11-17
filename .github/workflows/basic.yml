@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 1. Checkout Kode Repositori
-
+        uses: actions/checkout@v4
       - name: 2. Cek Isi Direktori & Informasi Sistem
         run: |
           echo "=== Direktori Kerja ==="
